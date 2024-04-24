@@ -58,7 +58,7 @@ rule getSortedBam:
         sam = "{samples}_{segment}.sam",
         reference = "ref_{samples}_{segment}.fa"
     output:
-        sortedBam = temp("{samples}_{segment}_sorted.bam"),
+        sortedBam = "{samples}_{segment}_sorted.bam",
         fai = temp("ref_{samples}_{segment}.fa.fai")
     conda:
         "../envs/mapping.yml"

@@ -1,0 +1,16 @@
+import pandas as pd
+
+configfile:"config/config.yaml"
+
+path = ["data/ref","data/ref_compl"]
+sample_reads = pd.read_csv("config/sample_reads.csv")
+samples = sample_reads["sample_id"].tolist()
+hana = ["4.HA","6.NA"]
+
+rule all:
+    input:
+        expand("results/{samples}/BLASTN_most_represented_viruses_{samples}_{hana}.txt",samples=samples, hana=hana)
+
+include: "rules/blastdb.smk"
+include: "rules/blast_query.smk"
+include: "rules/mix.smk"

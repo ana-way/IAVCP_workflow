@@ -24,9 +24,9 @@ rule primarySegmentSearch:
 rule SegmentSearch:
     input:
         db_done = "data/ref_compl/{hana}.makeblastdb.done",
-        sequences = "{samples}_{hana}_unmapped.fa"
+        sequences = "um_{samples}_{hana}_part.fa"
     output:
-        tsv = temp("unmapped_{samples}_{hana}.tsv")
+        tsv = temp("um_{samples}_{hana}.tsv")
 
     conda:
         "../envs/blast.yml"

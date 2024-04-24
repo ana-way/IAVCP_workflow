@@ -12,13 +12,10 @@ rule all:
     input:
         expand("results/{samples}/reports/fastp/{samples}_qc.html", samples=samples),
         expand("results/{samples}/reports/coverage/{samples}_{segment}.samcov.txt", samples=samples, segment=segment),
-        expand("results/{samples}/consensus/{samples}_{segment}_consensus.fa", samples=samples, segment=segment),
-        expand("results/{samples}/{samples}_mix.txt",  samples=samples)
-
+        expand("results/{samples}/consensus/{samples}_{segment}_consensus.fa", samples=samples, segment=segment)
 
 include: "rules/blastdb.smk"
 include: "rules/qc.smk"
 include: "rules/get_fasta.smk"
 include: "rules/blast_query.smk"
 include: "rules/consensus_call.smk"
-include: "rules/reassort.smk"
