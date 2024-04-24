@@ -1,0 +1,4 @@
+data/ref_compl/1.PB2.fa filter=lfs diff=lfs merge=lfs -text
+data/ref_compl/2.PB1.fa filter=lfs diff=lfs merge=lfs -text
+data/ref_compl/3.PA.fa filter=lfs diff=lfs merge=lfs -text
+data/ref_compl/4.HA.fa filter=lfs diff=lfs merge=lfs -text

@@ -1,0 +1,21 @@
+import pandas as pd
+import os
+
+configfile:"config/config.yaml"
+
+path = ["data/ref_compl"]
+segment=["1.PB2","2.PB1","3.PA","4.HA","5.NP","6.NA","7.M1M2","8.NS1"]
+sample_reads = pd.read_csv("config/sample_genome.csv")
+samples = sample_reads["sample_id"].tolist()
+
+rule all:
+    input:
+        expand("{samples}_nearest_to_{segment}.fa", samples=samples, segment=segment),
+        expand("results/{samples}/trees/{samples}_{segment}.midpoint-rooted.nwk", samples=samples, segment=segment),
+        expand("results/{samples}/trees/{samples}_{segment}.html",samples=samples, segment=segment)
+
+
+include: "rules/blastdb.smk"
+include: "rules/blast_query.smk"
+include: "rules/get_nearest.smk"
+include: "rules/phylo.smk"

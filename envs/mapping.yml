@@ -1,0 +1,10 @@
+name: IAVCP
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - bowtie2=2.3.5.1=py37he513fc3_0
+  - ivar=1.4.2=h0033a41_2
+  - samtools=1.18=hd87286a_0
+  - seqtk=1.4=he4a0461_1
