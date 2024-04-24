@@ -17,13 +17,19 @@ To install the pipeline, clone this repository using the command below:
 
 ``` git clone https://github.com/ana-way/IAVCP_workflow ```
 
+While in the main directory IAVCP_workflow run the following commands:
+```
+cd ./data
+tar -xvzf data.tar.gz
+```
+
 # Dependencies
 
 To ensure proper functionality, it is essential to have a package manager like [Conda](https://conda.io/projects/conda/en/latest/user-guide/install/index.ht) or [Mamba](https://mamba.readthedocs.io/en/latest/installation/mamba-installation.html) installed on your device or server.
 
 Afterward, we recommend utilizing a full installation of [Snakemake](https://snakemake.readthedocs.io/en/stable/getting_started/installation.html) within an isolated environment
 
-The remaining dependent packages will be installed automatically.
+The remaining dependent packages will be installed automatically. Therefore, the first launch of the pipeline may take longer.
 
 # Input
 
