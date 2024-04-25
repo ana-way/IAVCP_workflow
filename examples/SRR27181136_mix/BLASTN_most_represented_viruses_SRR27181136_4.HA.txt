@@ -1,0 +1,6 @@
+      1 MT570353_country=Egypt_host=Anas-crecca_segment=4_strain=A-teal-Egypt-MBD1556OP-2018_serotype=H6N2_collection-date=NA
+      1 reference_ID
+      2 KJ739428_country=USA--Oklahoma_host=swine_segment=4_strain=A-swine-Oklahoma-A01410541-2014_serotype=H1N1_collection-date=NA
+      2 KM361407_country=USA--North-Dakota_host=swine_segment=4_strain=A-swine-North-Dakota-A01104084-2014_serotype=H3N2_collection-date=NA
+      5 ON870681_country=China_host=mink_segment=4_strain=A-mink-China-chick-embryo-2018_serotype=H9N2_collection-date=NA
+     28 KY935545_country=USA_host=Sus-scrofa-scrofa_segment=4_strain=A-swine-Indiana-16TOSU4068-2016_serotype=H3N2_collection-date=NA
