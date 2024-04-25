@@ -1,35 +1,19 @@
-rule getUnmappedBam:
+rule getFa:
     input:
-        bam = "{samples}_{hana}_sorted.bam"
+        r1_trimmed = "{samples}_1.paired.fq",
+        r2_trimmed = "{samples}_2.paired.fq"
     output:
-        unmapbam = temp("{samples}_{hana}_unmapped.bam")
-    conda:
-        "../envs/mapping.yml"
-    threads:
-        8
-    shell:
-        r"""
-        samtools view -b -f 4 {input.bam} > {output.unmapbam}
-        """
-
-rule UMfa:
-    input:
-        bam = "{samples}_{hana}_unmapped.bam"
-    output:
-        umfq = temp("um_{samples}_{hana}.fq"),
-        unmapfa = temp("um_{samples}_{hana}_part.fa")
-    conda:
-        "../envs/mapping.yml"
+        merge = temp("{samples}_paired.fq"),
+        sequences = temp("um_{samples}_part.fa")
     params:
-        part = config["PART"]
-    threads:
-        8
+        part = config["PART"]*4
+    conda:
+        "../envs/qc.yml"
     shell:
         r"""
-        samtools bam2fq {input} > {output.umfq}
-        head -n {params.part} {output.umfq} | seqtk seq -a > {output.unmapfa}
+        cat {input.r1_trimmed} {input.r2_trimmed} > {output.merge}
+        head -n {params.part} {output.merge} | seqtk seq -a > {output.sequences}
         """
-
 
 rule getBLASTN:
     input:

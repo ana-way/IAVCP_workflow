@@ -11,6 +11,7 @@ rule all:
     input:
         expand("results/{samples}/BLASTN_most_represented_viruses_{samples}_{hana}.txt",samples=samples, hana=hana)
 
+include: "rules/qc.smk"
 include: "rules/blastdb.smk"
 include: "rules/blast_query.smk"
 include: "rules/mix.smk"

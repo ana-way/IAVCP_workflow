@@ -24,7 +24,7 @@ rule primarySegmentSearch:
 rule SegmentSearch:
     input:
         db_done = "data/ref_compl/{hana}.makeblastdb.done",
-        sequences = "um_{samples}_{hana}_part.fa"
+        sequences = "um_{samples}_part.fa"
     output:
         tsv = temp("um_{samples}_{hana}.tsv")
 

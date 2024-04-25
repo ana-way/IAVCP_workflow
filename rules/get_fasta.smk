@@ -6,7 +6,7 @@ rule getFasta:
         merge = temp("{samples}_paired.fq"),
         sequences = temp("{samples}_part.fa")
     params:
-        part = config["PART"]
+        part = config["PART"]*4
     conda:
         "../envs/qc.yml"
     shell:
