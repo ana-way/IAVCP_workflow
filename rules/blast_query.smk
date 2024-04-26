@@ -73,7 +73,7 @@ rule secondarySegmentSearch:
 rule iavpSegmentSearch:
     input:
         db_done= "data/ref_compl/{segment}.makeblastdb.done",
-        sequences = "genome/{samples}_{segment}.fa"
+        sequences = "SAMPLE_{samples}_{segment}.fa"
     output:
         res = temp("{samples}_{segment}_segment.tsv")
     conda:
