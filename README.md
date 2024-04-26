@@ -138,7 +138,7 @@ To create an HTML report with output files (phylogenetic trees in HTML format, q
 ```
 snakemake --report name.html
 ```
-[EXAMPLE](https://github.com/ana-way/IAVCP_workflow/blob/main/examples/report_IAVCP.html)
+[EXAMPLE](https://html-preview.github.io/?url=https://github.com/ana-way/IAVCP_workflow/blob/main/examples/report_IAVCP.html)
 
 # Advanced
 
