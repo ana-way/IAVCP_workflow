@@ -40,8 +40,11 @@ During the first run of the pipeline, all necessary packages are installed, thus
 
 # Input
 
+In the current version, the pipeline only works with paired reads.
+
 **FOR IAVCP, IAVC and MIX:**
-In the current version, the pipeline only works with paired reads. Samples should be specified in the file named *sample_reads.csv* located in the *config* directory.
+
+Samples should be specified in the file named *sample_reads.csv* located in the *config* directory.
 
 The first column specifies the prefix of the samples, which will be included in the output names. The next two columns indicate the relative path with the names of the reads. Various formats of reads are accepted as input, including FASTQ, FASTQ.GZ, and FQ.GZ.
 
@@ -51,7 +54,7 @@ Sample1,/path/to/Sample1_R1.fastq,/path/to/Sample1_R2.fastq
 Sample2,/path/to/Sample2_R1.fastq.gz,/path/to/Sample2_R2.fastq.gz
 Sample3,/path/to/Sample3_R1.fq.gz,/path/to/Sample3_R2.fq.gz
 ```
-**FOR IAVP**
+**FOR IAVP:**
 
 Samples should be specified in the file named *sample_genome.csv* located in the *config* directory.
 Example file format:
@@ -125,10 +128,13 @@ NOTE: Adjust the number of cores based on the specifications of your machine.
 
 **IAVCP**
 Upon completion of the pipeline, all results will appear in the *results* folder. The results for each sample include consensus sequences of segments in FASTA format, phylogenetic trees in NWK and HTML formats, and quality control reports and obtained coverage.
+
 **IAVC**
 The results for each sample include consensus sequences of segments in FASTA format, and quality control reports and obtained coverage.
+
 **IAVP**
 The results for each sample include phylogenetic trees in NWK and HTML formats.
+
 **MIX**
 The results for each sample include BLAST output in tabular format and a list of the most closely related virus types. [EXAMPLE](https://github.com/ana-way/IAVCP_workflow/tree/main/examples/SRR27181136_mix)
 
